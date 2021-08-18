@@ -110,6 +110,31 @@ CREATE TABLE default_catalog.default_database.scada2
 
 ## Stocks
 
+{"symbol":"GOOG","uuid":"d4190032-cfd7-4360-8377-39cd80635369","ts":1627655981401,"dt":1611680700000,"datetime":"2021/01/26 12:05:00","open":"2774.90991","close":"2774.94995","high":"2774.94995","volume":"1306","low":"2774.90991"}
+
+CREATE TABLE default_catalog.default_database.stocks
+(
+  `symbol` STRING,
+  `uuid` STRING,
+  `ts` BIGINT,
+  `dt` BIGINT,
+  `datetime` STRING,
+  `open` STRING,
+  `close` STRING,
+  `high` STRING,
+  `volume` STRING,
+  `low` STRING,
+  publishTime TIMESTAMP(3) METADATA,
+  WATERMARK FOR publishTime AS publishTime - INTERVAL '5' SECOND
+) WITH (
+  'connector' = 'pulsar',
+  'topic' = 'persistent://public/default/stocks',
+  'value.format' = 'json',
+  'service-url' = 'pulsar://localhost:6650',
+  'admin-url' = 'http://localhost:8080',
+  'scan.startup.mode' = 'earliest'
+);
+
 ## Notes
 
 
