@@ -7,7 +7,12 @@ Streaming Analytics with Apache Pulsar and Apache Flink SQL
 
 * You could run standalone https://pulsar.apache.org/docs/en/standalone/  https://ci.apache.org/projects/flink/flink-docs-release-1.13//docs/try-flink/local_installation/
 * Run on StreamNative in the Cloud easy https://streamnative.io/en/cloud/managed/
-*
+
+
+# Links
+
+* More Source Code https://github.com/tspannhw/FLiP-IoT
+* Slides https://noti.st/tspannhw/pjnmzO/continuous-sql-with-apache-streaming-flank-and-flip
 
 # Build a Table
 
