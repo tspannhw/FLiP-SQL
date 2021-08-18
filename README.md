@@ -1,6 +1,13 @@
 # FLiP-SQL
+
 Streaming Analytics with Apache Pulsar and Apache Flink SQL
 
+
+# Run this yourself
+
+* You could run standalone https://pulsar.apache.org/docs/en/standalone/  https://ci.apache.org/projects/flink/flink-docs-release-1.13//docs/try-flink/local_installation/
+* Run on StreamNative in the Cloud easy https://streamnative.io/en/cloud/managed/
+*
 
 # Build a Table
 
