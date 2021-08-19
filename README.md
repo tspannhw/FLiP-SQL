@@ -21,38 +21,49 @@ Create Logical Components
 
 Create tenants and namespaces
 ```
-bin/pulsar-admin tenants create orders
-bin/pulsar-admin namespaces create orders/inbound
+bin/pulsar-admin tenants create stocks
+bin/pulsar-admin tenants create iot
+bin/pulsar-admin namespaces create stocks/inbound
+bin/pulsar-admin namespaces create iot/field
 ```
 
 Create topics
 ```
-bin/pulsar-admin topics create persistent://orders/inbound/food-orders
-bin/pulsar-admin topics create persistent://orders/inbound/geo-encoder
-bin/pulsar-admin topics create persistent://orders/inbound/payments
-bin/pulsar-admin topics create persistent://orders/inbound/restaurants
-bin/pulsar-admin topics create persistent://orders/inbound/aggregated-orders
+bin/pulsar-admin topics create persistent://stocks/inbound/stocks
+bin/pulsar-admin topics create persistent://stocks/inbound/stocks2
+bin/pulsar-admin topics create persistent://iot/field/mqtt-1
+bin/pulsar-admin topics create persistent://iot/field/mqtt-2
+bin/pulsar-admin topics create persistent://iot/field/mqtt-3
 
-bin/pulsar-admin topics delete persistent://orders/inbound/food-orders
-bin/pulsar-admin topics delete persistent://orders/inbound/geo-encoder
-bin/pulsar-admin topics delete persistent://orders/inbound/payments
-bin/pulsar-admin topics delete persistent://orders/inbound/restaurants
-bin/pulsar-admin topics delete persistent://orders/inbound/aggregated-orders
-
-bin/pulsar-admin schemas delete persistent://orders/inbound/food-orders
-bin/pulsar-admin schemas delete persistent://orders/inbound/geo-encoder
-bin/pulsar-admin schemas delete persistent://orders/inbound/payments
-bin/pulsar-admin schemas delete persistent://orders/inbound/restaurants
-bin/pulsar-admin schemas delete persistent://orders/inbound/aggregated-orders
 ```
 
 Verify creation
 ```
-bin/pulsar-admin topics list orders/inbound/
+bin/pulsar-admin topics list stocks/inbound/
+bin/pulsar-admin topics list iot/field/
 ```
 
 ```
-bin/pulsar-client consume -n 0 -s "subs" -p Earliest persistent://orders/inbound/aggregated-orders
+bin/pulsar-client consume -n 0 -s "subs" -p Earliest persistent://stocks/inbound/stocks
+```
+
+# Clean up when done
+
+Delete topics
+```
+bin/pulsar-admin topics delete persistent://stocks/inbound/stocks
+bin/pulsar-admin topics delete persistent://stocks/inbound/stocks2
+bin/pulsar-admin topics delete persistent://iot/field/mqtt-1
+bin/pulsar-admin topics delete persistent://iot/field/mqtt-2
+bin/pulsar-admin topics delete persistent://iot/field/mqtt-3
+
+bin/pulsar-admin namespaces delete stocks/inbound
+bin/pulsar-admin namespaces delete iot/field
+
+bin/pulsar-admin tenants delete stocks
+bin/pulsar-admin tenants delete iot
+
+
 ```
 
 
