@@ -39,6 +39,10 @@ pip3 install paho-mqtt
 * https://github.com/streamnative/pulsar-flink
 * https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sqlclient/
 * https://streamnative.io/en/blog/release/2021-04-20-flink-sql-on-streamnative-cloud
+* https://www.youtube.com/watch?v=0BxXjEqoJlU
+* https://www.youtube.com/watch?v=9ojajM7Zt0M&t=2105s
+* https://docs.streamnative.io/cloud/stable/compute/flink-sql
+* https://docs.streamnative.io/cloud/stable/compute/flink-sql-cookbook
 
 
 ## Local Pulsar Cluster REST End Points
