@@ -32,6 +32,13 @@ pip3 install paho-mqtt
 * https://pulsar.apache.org/docs/en/reference-cli-tools/
 * https://pulsar.apache.org/docs/en/admin-api-topics/#create
 * http://www.steves-internet-guide.com/into-mqtt-python-client/
+* https://pulsar.apache.org/docs/en/sql-getting-started/
+* https://github.com/morsapaes/flink-sql-pulsar
+* https://flink.apache.org/2021/01/07/pulsar-flink-connector-270.html
+* https://github.com/morsapaes/flink-sql-pulsar/
+* https://github.com/streamnative/pulsar-flink
+* https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sqlclient/
+
 
 ## Local Pulsar Cluster REST End Points
 
@@ -289,4 +296,11 @@ SET 'table.exec.spill-compression.enabled' = 'true';
 SET 'table.exec.spill-compression.block-size' = '128kb';
 ```
 
+## Debugging Notes
+
+Command line tools and REST end points can find a lot of things, but on my Powerbook checking all the ports is helpful.
+
+```
+lsof -i -P | grep -i "listen"
+```
 
