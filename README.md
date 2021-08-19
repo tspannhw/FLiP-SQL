@@ -21,6 +21,22 @@ pip3 install paho-mqtt
 
 * More Source Code https://github.com/tspannhw/FLiP-IoT
 * Slides https://noti.st/tspannhw/pjnmzO/continuous-sql-with-apache-streaming-flank-and-flip
+* https://github.com/tspannhw/rpi-picamera-mqtt-nifi
+* https://hub.streamnative.io/protocol-handlers/mop/0.2.0
+* https://github.com/eclipse/paho.mqtt-spy/releases/tag/1.0.0
+* https://www.hivemq.com/mqtt-toolbox/
+* https://pulsar.apache.org/docs/en/reference-cli-tools/
+* https://github.com/streamnative/mop/releases/tag/v2.8.0.10
+* https://pulsar.apache.org/docs/en/reference-cli-tools/
+* https://pulsar.apache.org/docs/en/admin-api-topics/#create
+* http://www.steves-internet-guide.com/into-mqtt-python-client/
+
+# Local Pulsar Cluster REST End Points
+
+* http://localhost:8080/admin/v2/persistent/public/default/mqtt-1/stats
+* http://localhost:8080/admin/v2/persistent/public/default/mqtt-1/internalStats
+* http://localhost:8080/admin/v2/persistent/public/default/mqtt-1/subscription/test-sub/position/10
+
 
 # Build Pulsar Topics
 
@@ -53,6 +69,7 @@ bin/pulsar-admin topics list iot/field/
 
 ```
 bin/pulsar-client consume -n 0 -s "subs" -p Earliest persistent://stocks/inbound/stocks
+bin/pulsar-client consume "persistent://public/default/mqtt-1" -s mqtt-reader
 ```
 
 # Clean up when done
