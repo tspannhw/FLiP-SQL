@@ -38,6 +38,7 @@ pip3 install paho-mqtt
 * https://github.com/morsapaes/flink-sql-pulsar/
 * https://github.com/streamnative/pulsar-flink
 * https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/dev/table/sqlclient/
+* https://streamnative.io/en/blog/release/2021-04-20-flink-sql-on-streamnative-cloud
 
 
 ## Local Pulsar Cluster REST End Points
@@ -303,4 +304,10 @@ Command line tools and REST end points can find a lot of things, but on my Power
 ```
 lsof -i -P | grep -i "listen"
 ```
+
+## Example Architecture
+
+
+![Apache Pulsar + Apache Flink](https://streamnative.io/uploads/images/blogs/flinksql/4.png)
+
 
