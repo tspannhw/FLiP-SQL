@@ -2,7 +2,9 @@
 
 Streaming Analytics with Apache Pulsar and Apache Flink SQL
 
-# IoT Data Publishing into MQTT
+
+## IoT Data Publishing into MQTT
+
 
 I installed the Eclipse Paho MQTT Pyton3 client for NVIDIA XAVIER NX, Raspberry Pi 4 and Mac PowerBook.
 
@@ -11,13 +13,13 @@ I installed the Eclipse Paho MQTT Pyton3 client for NVIDIA XAVIER NX, Raspberry 
 pip3 install paho-mqtt
 ```
 
-# Run this yourself
+## Run this yourself
 
 * You could run standalone https://pulsar.apache.org/docs/en/standalone/  https://ci.apache.org/projects/flink/flink-docs-release-1.13//docs/try-flink/local_installation/
 * Run on StreamNative in the Cloud easy https://streamnative.io/en/cloud/managed/
 
 
-# Links
+## Links
 
 * More Source Code https://github.com/tspannhw/FLiP-IoT
 * Slides https://noti.st/tspannhw/pjnmzO/continuous-sql-with-apache-streaming-flank-and-flip
@@ -31,19 +33,17 @@ pip3 install paho-mqtt
 * https://pulsar.apache.org/docs/en/admin-api-topics/#create
 * http://www.steves-internet-guide.com/into-mqtt-python-client/
 
-# Local Pulsar Cluster REST End Points
+## Local Pulsar Cluster REST End Points
 
 * http://localhost:8080/admin/v2/persistent/public/default/mqtt-1/stats
 * http://localhost:8080/admin/v2/persistent/public/default/mqtt-1/internalStats
 * http://localhost:8080/admin/v2/persistent/public/default/mqtt-1/subscription/test-sub/position/10
 
 
-# Build Pulsar Topics
+## Build Pulsar Topics
 
-Create Logical Components
--------------------------
 
-Create tenants and namespaces
+## Create tenants and namespaces
 ```
 bin/pulsar-admin tenants create stocks
 bin/pulsar-admin tenants create iot
@@ -51,28 +51,41 @@ bin/pulsar-admin namespaces create stocks/inbound
 bin/pulsar-admin namespaces create iot/field
 ```
 
-Create topics
+## Create topics
 ```
 bin/pulsar-admin topics create persistent://stocks/inbound/stocks
 bin/pulsar-admin topics create persistent://stocks/inbound/stocks2
 bin/pulsar-admin topics create persistent://iot/field/mqtt-1
 bin/pulsar-admin topics create persistent://iot/field/mqtt-2
 bin/pulsar-admin topics create persistent://iot/field/mqtt-3
-
+bin/pulsar-admin topics create persistent://public/default/mqtt-nifi
+bin/pulsar-admin topics create persistent://public/default/mqtt-go
+bin/pulsar-admin topics create persistent://public/default/mqtt-python
+bin/pulsar-admin topics create persistent://public/default/mqtt-rp4
+bin/pulsar-admin topics create persistent://public/default/mqtt-nvidia
+bin/pulsar-admin topics create persistent://public/default/mqtt-mac
+bin/pulsar-admin topics create persistent://public/default/mqtt-2
+bin/pulsar-admin topics create persistent://public/default/mqtt-3
+bin/pulsar-admin topics create persistent://public/default/mqtt-4
+bin/pulsar-admin topics create persistent://public/default/mqtt-5
 ```
 
-Verify creation
+
+##  Verify creation
 ```
 bin/pulsar-admin topics list stocks/inbound/
 bin/pulsar-admin topics list iot/field/
+bin/pulsar-admin topics list public/default
 ```
+
+## Consume Data
 
 ```
 bin/pulsar-client consume -n 0 -s "subs" -p Earliest persistent://stocks/inbound/stocks
 bin/pulsar-client consume "persistent://public/default/mqtt-1" -s mqtt-reader
 ```
 
-# Clean up when done
+## Clean up when done
 
 Delete topics
 ```
@@ -87,12 +100,10 @@ bin/pulsar-admin namespaces delete iot/field
 
 bin/pulsar-admin tenants delete stocks
 bin/pulsar-admin tenants delete iot
-
-
 ```
 
 
-# Build a Table
+## Build a Table
 
 ```
 CREATE TABLE scada (
