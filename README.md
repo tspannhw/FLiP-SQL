@@ -2,6 +2,14 @@
 
 Streaming Analytics with Apache Pulsar and Apache Flink SQL
 
+# IoT Data Publishing into MQTT
+
+I installed the Eclipse Paho MQTT Pyton3 client for NVIDIA XAVIER NX, Raspberry Pi 4 and Mac PowerBook.
+
+
+```
+pip3 install paho-mqtt
+```
 
 # Run this yourself
 
