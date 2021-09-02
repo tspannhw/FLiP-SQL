@@ -94,7 +94,7 @@ bin/pulsar-admin topics list public/default
 
 ```
 bin/pulsar-client consume -n 0 -s "subs" -p Earliest persistent://stocks/inbound/stocks
-bin/pulsar-client consume "persistent://public/default/mqtt-1" -s mqtt-reader
+bin/pulsar-client consume "persistent://public/default/mqtt-2" -s mqtt-reader
 ```
 
 ## Clean up when done
@@ -314,4 +314,7 @@ lsof -i -P | grep -i "listen"
 
 ![Apache Pulsar + Apache Flink](https://streamnative.io/uploads/images/blogs/flinksql/4.png)
 
+## Running Flink Cluster
 
+./bin/start-cluster.sh
+./bin/sql-client.sh embedded --library /Users/tspann/Documents/servers/flink-1.13.2/sqllib -e /Users/tspann/Documents/servers/flink-1.13.2/sql-client.yaml
