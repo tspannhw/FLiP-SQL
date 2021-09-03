@@ -80,6 +80,7 @@ bin/pulsar-admin topics create persistent://public/default/mqtt-2
 bin/pulsar-admin topics create persistent://public/default/mqtt-3
 bin/pulsar-admin topics create persistent://public/default/mqtt-4
 bin/pulsar-admin topics create persistent://public/default/mqtt-5
+bin/pulsar-admin topics create persistent://public/default/weather
 ```
 
 
