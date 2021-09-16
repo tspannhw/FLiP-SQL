@@ -377,8 +377,18 @@ bin/pulsar-admin schemas get stocks
 bin/pulsar-admin sinks create --archive ./connectors/pulsar-io-jdbc-postgres-2.8.0.nar --inputs stocks --name stocks-postgres-jdbc-sink --sink-config-file conf/pgsql.yml --parallelism 1
 bin/pulsar-admin sinks list --tenant public --namespace default
 bin/pulsar-admin sinks get --tenant public --namespace default --name stocks-postgres-jdbc-sink 
+bin/pulsar-admin sinks status --tenant public --namespace default --name stocks-postgres-jdbc-sink 
 
 ```
+
+## Admin
+
+```
+bin/pulsar-admin sinks restart --tenant public --namespace default --name stocks-postgres-jdbc-sink
+bin/pulsar-admin sinks stop --tenant public --namespace default --name stocks-postgres-jdbc-sink
+bin/pulsar-admin sinks delete --tenant public --namespace default --name stocks-postgres-jdbc-sink
+```
+
 
 
 
