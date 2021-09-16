@@ -407,6 +407,16 @@ CREATE TABLE stocks
 )
 ```
 
+## Consume
+
+```
+bin/pulsar-admin topics list public/default
+bin/pulsar-client consume "persistent://public/default/stocks" -s "stocks-reader" -n 0
+
+# persistent://public/default/stocks-partition-0
+
+```
+
 
 
 
