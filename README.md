@@ -389,6 +389,23 @@ bin/pulsar-admin sinks stop --tenant public --namespace default --name stocks-po
 bin/pulsar-admin sinks delete --tenant public --namespace default --name stocks-postgres-jdbc-sink
 ```
 
+## Postgresql Table
+
+```
+CREATE TABLE stocks
+(
+    symbol VARCHAR(255), 
+    uuid VARCHAR(255),
+    ts VARCHAR(255),
+    dt	 VARCHAR(255),
+   datetime VARCHAR(255),
+   open VARCHAR(255), 
+   close VARCHAR(255),
+   high VARCHAR(255),
+   volume VARCHAR(255),
+   low VARCHAR(255)
+)
+```
 
 
 
