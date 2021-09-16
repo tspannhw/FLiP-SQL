@@ -368,4 +368,18 @@ lsof -i -P | grep -i "listen"
   "properties": {}
 }
 
+## Run
+
+```
+
+bin/pulsar-admin schemas upload stocks -f conf/stocks.yml
+bin/pulsar-admin schemas get stocks
+bin/pulsar-admin sinks create --archive ./connectors/pulsar-io-jdbc-postgres-2.8.0.nar --inputs stocks --name stocks-postgres-jdbc-sink --sink-config-file conf/pgsql.yml --parallelism 1
+bin/pulsar-admin sinks list --tenant public --namespace default
+bin/pulsar-admin sinks get --tenant public --namespace default --name stocks-postgres-jdbc-sink 
+
+```
+
+
+
 
