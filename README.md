@@ -353,3 +353,19 @@ lsof -i -P | grep -i "listen"
 
 ./bin/start-cluster.sh
 ./bin/sql-client.sh embedded --library /Users/tspann/Documents/servers/flink-1.13.2/sqllib -e /Users/tspann/Documents/servers/flink-1.13.2/sql-client.yaml
+
+
+## Pulsar JDBC Postgresql SINK
+
+* https://pulsar.apache.org/docs/en/io-jdbc-sink/
+* https://pulsar.apache.org/docs/en/io-quickstart/#connect-pulsar-to-postgresql
+
+## Create an avro schema
+
+{
+  "type": "AVRO",
+  "schema": "{\"type\":\"record\",\"name\":\"Test\",\"fields\":[{\"name\":\"id\",\"type\":[\"null\",\"int\"]},{\"name\":\"name\",\"type\":[\"null\",\"string\"]}]}",
+  "properties": {}
+}
+
+
