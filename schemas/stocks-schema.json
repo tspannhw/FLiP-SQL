@@ -1,5 +1,5 @@
 {
-  "type": "AVRO",
-  "schema": "{\"type\":\"record\",\"name\":\"stocks\",\"fields\":[{\"name\":\"symbol\",\"type\":[\"null\",\"string\"]},{\"name\":\"uuid\",\"type\":\"string\"},{\"name\":\"ts\",\"type\":\"long\",\"default\":1},{\"name\":\"dt\",\"type\":\"long\",\"default\":1},{\"name\":\"datetime\",\"type\":\"string\"},{\"name\":\"open\",\"type\":\"string\"},{\"name\":\"close\",\"type\":\"string\"},{\"name\":\"high\",\"type\":\"string\"},{\"name\":\"volume\",\"type\":\"string\"},{\"name\":\"low\",\"type\":\"string\"}]}",
+  "type": "JSON",
+  "schema": "{\"type\":\"record\",\"name\":\"stocks\",\"fields\":[{\"name\":\"symbol\",\"type\":[\"null\",\"string\"]},{\"name\":\"uuid\",\"type\":[\"null\",\"string\"]},{\"name\":\"ts\",\"type\":\"long\",\"default\":1},{\"name\":\"dt\",\"type\":\"long\",\"default\":1},{\"name\":\"datetime\",\"type\":\"string\"},{\"name\":\"open\",\"type\":\"string\"},{\"name\":\"close\",\"type\":\"string\"},{\"name\":\"high\",\"type\":\"string\"},{\"name\":\"volume\",\"type\":\"string\"},{\"name\":\"low\",\"type\":\"string\"}]}",
   "properties": {}
 }
