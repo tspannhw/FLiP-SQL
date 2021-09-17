@@ -251,40 +251,6 @@ CREATE TABLE default_catalog.default_database.scada2
 ```
 
 
-## Stocks Example Data
-
-```
-{"symbol":"GOOG","uuid":"d4190032-cfd7-4360-8377-39cd80635369","ts":1627655981401,"dt":1611680700000,"datetime":"2021/01/26 12:05:00","open":"2774.90991","close":"2774.94995","high":"2774.94995","volume":"1306","low":"2774.90991"}
-
-```
-
-## Stocks Table and Topic
-
-```
-CREATE TABLE default_catalog.default_database.stocks
-(
-  `symbol` STRING,
-  `uuid` STRING,
-  `ts` BIGINT,
-  `dt` BIGINT,
-  `datetime` STRING,
-  `open` STRING,
-  `close` STRING,
-  `high` STRING,
-  `volume` STRING,
-  `low` STRING,
-  publishTime TIMESTAMP(3) METADATA,
-  WATERMARK FOR publishTime AS publishTime - INTERVAL '5' SECOND
-) WITH (
-  'connector' = 'pulsar',
-  'topic' = 'persistent://public/default/stocks',
-  'value.format' = 'json',
-  'service-url' = 'pulsar://localhost:6650',
-  'admin-url' = 'http://localhost:8080',
-  'scan.startup.mode' = 'earliest'
-);
-```
-
 ## Weather Table
 
 ```
@@ -371,7 +337,10 @@ lsof -i -P | grep -i "listen"
 ## Run
 
 ```
-
+bin/pulsar-admin topics list public/default
+bin/pulsar-admin topics create persistent://public/default/stocks
+bin/pulsar-admin schemas delete stocks
+bin/pulsar-admin schemas delete stocks-partition-0
 bin/pulsar-admin schemas upload stocks -f conf/stocks.yml
 bin/pulsar-admin schemas get stocks
 bin/pulsar-admin sinks create --archive ./connectors/pulsar-io-jdbc-postgres-2.8.0.nar --inputs stocks --name stocks-postgres-jdbc-sink --sink-config-file conf/pgsql.yml --parallelism 1
@@ -415,6 +384,40 @@ bin/pulsar-client consume "persistent://public/default/stocks" -s "stocks-reader
 
 # persistent://public/default/stocks-partition-0
 
+```
+
+## Stocks Example Data
+
+```
+{"symbol":"GOOG","uuid":"d4190032-cfd7-4360-8377-39cd80635369","ts":1627655981401,"dt":1611680700000,"datetime":"2021/01/26 12:05:00","open":"2774.90991","close":"2774.94995","high":"2774.94995","volume":"1306","low":"2774.90991"}
+
+```
+
+## Stocks Table and Topic
+
+```
+CREATE TABLE default_catalog.default_database.stocks
+(
+  `symbol` STRING,
+  `uuid` STRING,
+  `ts` BIGINT,
+  `dt` BIGINT,
+  `datetime` STRING,
+  `open` STRING,
+  `close` STRING,
+  `high` STRING,
+  `volume` STRING,
+  `low` STRING,
+  publishTime TIMESTAMP(3) METADATA,
+  WATERMARK FOR publishTime AS publishTime - INTERVAL '5' SECOND
+) WITH (
+  'connector' = 'pulsar',
+  'topic' = 'persistent://public/default/stocks',
+  'value.format' = 'json',
+  'service-url' = 'pulsar://localhost:6650',
+  'admin-url' = 'http://localhost:8080',
+  'scan.startup.mode' = 'earliest'
+);
 ```
 
 
