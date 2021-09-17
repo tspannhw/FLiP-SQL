@@ -350,7 +350,7 @@ bin/pulsar-admin sinks create --archive ./connectors/pulsar-io-jdbc-postgres-2.8
 bin/pulsar-admin sinks list --tenant public --namespace default
 bin/pulsar-admin sinks get --tenant public --namespace default --name stocks-postgres-jdbc-sink 
 bin/pulsar-admin sinks status --tenant public --namespace default --name stocks-postgres-jdbc-sink 
-
+bin/pulsar-admin topics info-internal persistent://public/default/stocks
 ```
 
 ## Admin
