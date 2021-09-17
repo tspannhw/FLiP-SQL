@@ -351,6 +351,7 @@ bin/pulsar-admin sinks list --tenant public --namespace default
 bin/pulsar-admin sinks get --tenant public --namespace default --name stocks-postgres-jdbc-sink 
 bin/pulsar-admin sinks status --tenant public --namespace default --name stocks-postgres-jdbc-sink 
 bin/pulsar-admin topics info-internal persistent://public/default/stocks
+bin/pulsar-admin topics stats-internal persistent://public/default/stocks
 ```
 
 ## Admin
