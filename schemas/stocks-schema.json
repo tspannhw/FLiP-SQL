@@ -1,5 +1,5 @@
 {
-  "type": "AVRO",
+  "type": "JSON",
   "schema": "{\"type\":\"record\",\"name\":\"stocks\",\"fields\":[{\"name\":\"symbol\",\"type\":[\"null\", \"string\"],\"default\":\"NA\"},{\"name\":\"uuid\",\"type\":\"type\":[\"null\", \"string\"],\"default\":\"NA\"},{\"name\":\"ts\",\"type\":[\"null\", \"string\"],\"default\":\"1\"},{\"name\":\"dt\",\"type\":[\"null\", \"string\"],\"default\":\"1\"},{\"name\":\"datetime\",\"type\":[\"null\", \"string\"],\"default\":\"0\"},{\"name\":\"open\",\"type\":[\"null\", \"string\"],\"default\":\"0\"},{\"name\":\"close\",\"type\":[\"null\", \"string\"],\"default\":\"0\"},{\"name\":\"high\",\"type\":[\"null\", \"string\"],\"default\":\"0\"},{\"name\":\"volume\",\"type\":[\"null\", \"string\"],\"default\":\"0\"},{\"name\":\"low\",\"type\":[\"null\", \"string\"],\"default\":\"0\"}]}",
   "properties": {}
 }
