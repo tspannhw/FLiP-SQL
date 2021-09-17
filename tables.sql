@@ -51,6 +51,7 @@ uuid VARCHAR(255),
 
 
 
+
 CREATE TABLE iotjetsonjson 
 (
 	uuid VARCHAR(255), 
@@ -68,14 +69,13 @@ CREATE TABLE iotjetsonjson
 	filename VARCHAR(255),  
 	host_name VARCHAR(255), 
         macaddress VARCHAR(255), 
-	end VARCHAR(255), 
+	"end" VARCHAR(255), 
 	te VARCHAR(255), 
 	systemtime VARCHAR(255),
 	cpu VARCHAR(255),
         diskusage VARCHAR(255),
 	memory VARCHAR(255), 
-	id VARCHAR(255), 
+	"id" VARCHAR(255), 
 	imageinput VARCHAR(255)
 );
-	
 	
