@@ -49,6 +49,8 @@ uuid VARCHAR(255),
 	nh3 VARCHAR(255), 
 	gasko VARCHAR(255));
 
+
+
 CREATE TABLE iotjetsonjson 
 (
 	uuid VARCHAR(255), 
@@ -62,12 +64,14 @@ CREATE TABLE iotjetsonjson
         gputempf VARCHAR(255),
 	cputempf VARCHAR(255), 
 	runtime VARCHAR(255),
+	host VARCHAR(255),
 	filename VARCHAR(255),  
 	host_name VARCHAR(255), 
         macaddress VARCHAR(255), 
 	end VARCHAR(255), 
 	te VARCHAR(255), 
 	systemtime VARCHAR(255),
+	cpu VARCHAR(255),
         diskusage VARCHAR(255),
 	memory VARCHAR(255), 
 	id VARCHAR(255), 
