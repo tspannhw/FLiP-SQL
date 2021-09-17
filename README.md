@@ -337,10 +337,13 @@ lsof -i -P | grep -i "listen"
 ## Run
 
 ```
-bin/pulsar-admin topics list public/default
-bin/pulsar-admin topics create persistent://public/default/stocks
+bin/pulsar-daemon start websocket
 bin/pulsar-admin schemas delete stocks
 bin/pulsar-admin schemas delete stocks-partition-0
+bin/pulsar-admin schemas delete persistent://public/default/stocks-partition-0
+bin/pulsar-admin schemas delete persistent://public/default/stocks
+bin/pulsar-admin topics list public/default
+bin/pulsar-admin topics create persistent://public/default/stocks
 bin/pulsar-admin schemas upload stocks -f conf/stocks.yml
 bin/pulsar-admin schemas get stocks
 bin/pulsar-admin sinks create --archive ./connectors/pulsar-io-jdbc-postgres-2.8.0.nar --inputs stocks --name stocks-postgres-jdbc-sink --sink-config-file conf/pgsql.yml --parallelism 1
